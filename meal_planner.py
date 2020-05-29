@@ -4,13 +4,14 @@ meals = []
 
 
 def generate_random_options(num_options):
+    # picks random options from meals and prints them
     for option in range(0, num_options, 1):
         print(random.choice(meals))
 
 
 def file_reader():
     global meals
-
+    # this function reads the file and copies it into the list meals so the file doesn't have to constantly be in use
     file = open('recipes.txt', 'r')
     meals = csv.reader(file)
     meals = [(line.strip()).split() for line in file]
@@ -27,6 +28,9 @@ def main():
     # the if statement ensures that the user chooses to generate at least one option, otherwise stopping the program
     if num_options < 1:
         print("Error - Number must be 1 or larger")
+        print("Program stopped")
+    elif num_options > len(meals):
+        print("Error - There aren't that many options available")
         print("Program stopped")
     else:
         generate_random_options(num_options)

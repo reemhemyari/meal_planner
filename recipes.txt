@@ -1,24 +1,24 @@
-"Chicken Fajitas"
-"Spaghetti Bolognese"
-"Chicken Enchilladas"
-"Sweet Potato and Bean Enchilladas"
-"Salmon Pasta"
-"Fish Tacos"
-"Beef Tacos"
-"Maglooba"
-"Chicken and Carrots"
-"Chicken Curry"
-"Salmon with Veg"
-"Chilli con Carne"
-"Roast Chicken"
-"Roast Beef"
-"Lasagne"
-"Lentil Spinach Curry"
-"Chicken Stir-fry"
-"Veg Stir-fry"
-"Eat out"
-"Chicken and Leak pie"
-"Home-made Pizza"
-"Beef Hot Pot"
-"Pasta Bake"
-"Home-made Katsu Curry"
+Eat-out
+Lasagnes
+Maglooba
+Fish-Tacos
+Beef-Tacos
+Roast-Beef
+Pasta-Bake
+Veg-Stirfry
+Salmon-Pasta
+Beef-Hot-Pot
+Roast-Chicken
+Chicken-Curry
+Chicken-Stirfry
+Chicken-Fajitas
+Salmon-with-Veg
+Home-made-Pizza
+Chilli-con-Carne
+Spaghetti-Bolognese
+Chicken-Enchilladas
+Chicken-and-Carrots
+Chicken-and-Leak-pie
+Lentil-Spinach-Curry
+Home-made-Katsu-Curry
+Sweet-Potato-and-Bean-Enchilladas

@@ -5,6 +5,8 @@ meals = get_stored_meals()
 
 
 def choose_meals(num_options) -> str:
-    for _ in range(0, num_options, 1):
-        print(random.choice(meals))
+    meal = meals[:]  # make a copy of the input list
+    random.shuffle(meal)
+    for i in range(num_options):
+        print(meal.pop())
     return random.choice(meals)

@@ -1,31 +1,13 @@
-import csv
-import random
-meals = []
-
-
-def generate_random_options(num_options):
-    # picks random options from meals and prints them
-    for option in range(0, num_options, 1):
-        print(random.choice(meals))
-
-
-def file_reader():
-    global meals
-    # this function reads the file and copies it into the list meals so the file doesn't have to constantly be in use
-    file = open('recipes.txt', 'r')
-    meals = csv.reader(file)
-    meals = [(line.strip()).split() for line in file]
-    file.close()
-
-    return
-
 
 def main():
-    file_reader()
+    from get_meals_from_file import get_stored_meals
+    from choose_meal import choose_meals
+
+    meals = get_stored_meals()
 
     num_options = int(input("Enter a number of options you would like to be generated: "))
 
-    # the if statement ensures that the user chooses to generate at least one option, otherwise stopping the program
+    # if statement ensures that the user chooses to generate at least one option, otherwise stopping the program
     if num_options < 1:
         print("Error - Number must be 1 or larger")
         print("Program stopped")
@@ -33,14 +15,14 @@ def main():
         print("Error - There aren't that many options available")
         print("Program stopped")
     else:
-        generate_random_options(num_options)
+        choose_meals(num_options)
 
         # the while loop allows the user to regenerate options
         new_options = "y"
         while new_options == "y":
             new_options = str(input("Would you like to generate new options? (y/n): "))
             if new_options == "y":
-                generate_random_options(num_options)
+                choose_meals(num_options)
             else:
                 print("Program stopped")
 

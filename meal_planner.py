@@ -16,8 +16,6 @@ def main():
         print("")
         print("Error - There aren't that many options available")
         print("Program stopped")
-    elif type(num_options) is not int:
-        print("Error - Must be an integer")
     else:
         chosen_meals = choose_meals(num_options)
         print(chosen_meals)

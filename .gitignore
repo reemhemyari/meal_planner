@@ -1,2 +1,6 @@
 .idea/
 venv/
+.pytest_cache
+pytests.xml
+coverage.xml
+.coverage

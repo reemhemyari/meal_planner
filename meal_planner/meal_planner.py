@@ -1,5 +1,5 @@
-from meal_planner import get_meals_from_file
-from meal_planner import choose_meal
+import get_meals_from_file
+import choose_meal
 
 
 def main() -> None:

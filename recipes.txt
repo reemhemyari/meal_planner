@@ -1,24 +1,24 @@
 Eat out
 Lasagne
 Maglooba
-Fish-Tacos
-Beef-Tacos
-Roast-Beef
-Pasta-Bake
-Veg-Stirfry
-Salmon-Pasta
-Beef-Hot-Pot
-Roast-Chicken
-Chicken-Curry
-Chicken-Stirfry
-Chicken-Fajitas
-Salmon-with-Veg
-Home-made-Pizza
-Chilli-con-Carne
-Spaghetti-Bolognese
-Chicken-Enchilladas
-Chicken-and-Carrots
-Chicken-and-Leak-pie
-Lentil-Spinach-Curry
-Home-made-Katsu-Curry
-Sweet-Potato-and-Bean-Enchilladas
+Fish Tacos
+Beef Tacos
+Roast Beef
+Pasta Bake
+Veg Stirfry
+Salmon Pasta
+Beef Hot Pot
+Roast Chicken
+Chicken Curry
+Chicken Stirfry
+Chicken Fajitas
+Salmon with Veg
+Home made Pizza
+Chilli con Carne
+Spaghetti Bolognese
+Chicken Enchilladas
+Chicken and Carrots
+Chicken and Leak pie
+Lentil Spinach Curry
+Home made Katsu Curry
+Sweet Potato and Bean Enchilladas

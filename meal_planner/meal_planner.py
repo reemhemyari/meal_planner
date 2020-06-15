@@ -1,13 +1,16 @@
-from get_meals_from_file import get_stored_meals
-from choose_meal import choose_meals
+from meal_planner import get_meals_from_file
+from meal_planner import choose_meal
 
 
-def main():
-    meals = get_stored_meals()
+def main() -> None:
+    meals = get_meals_from_file.get_stored_meals()
 
-    num_options = int(input("Enter a number of options you would like to be generated: "))
+    num_options = int(
+        input("Enter a number of options you would like to be generated: ")
+    )
 
-    # if statement ensures that the user chooses to generate at least one option, otherwise stopping the program
+    # if statement ensures that the user chooses to generate at least one option,
+    # otherwise stopping the program
     if num_options < 1:
         print("")
         print("Error - Number must be 1 or larger")
@@ -17,7 +20,7 @@ def main():
         print("Error - There aren't that many options available")
         print("Program stopped")
     else:
-        chosen_meals = choose_meals(num_options)
+        chosen_meals = choose_meal.choose_meals(num_options)
         print(chosen_meals)
 
         # the while loop allows the user to regenerate options
@@ -25,7 +28,7 @@ def main():
         while new_options == "y":
             new_options = str(input("Would you like to generate new options? (y/n): "))
             if new_options == "y":
-                regenerated_choice = choose_meals(num_options)
+                regenerated_choice = choose_meal.choose_meals(num_options)
                 if len(regenerated_choice) > 0:
                     print(regenerated_choice)
                 else:
@@ -36,5 +39,5 @@ def main():
                 print("Program stopped")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -5,9 +5,11 @@ PROJECT_MODULE=meal_planner
 ifdef OS
 	RMDIR = rmdir /s/q
 	PYTHON_ACTIVATE = ${VENV_DIR}\Scripts\activate
+	PYTHON = py
 else
 	RMDIR = rm -rf
 	PYTHON_ACTIVATE = . ./${VENV_DIR}/bin/activate
+	PYTHON = python3
 endif
 
 #TARGETS FOR HUMAN INTERACTION
@@ -24,23 +26,23 @@ install-requirements: ${VENV_DIR}
 
 format: install-requirements
 	@echo "Formatting"
-	@${PYTHON_ACTIVATE} && python3 -m black ${PROJECT_MODULE}
+	@${PYTHON_ACTIVATE} && ${PYTHON} -m black ${PROJECT_MODULE}
 
 lint: install-requirements
 	@echo "Linting"
-	@${PYTHON_ACTIVATE} && python3 -m flake8
-	@${PYTHON_ACTIVATE} && python3 -m mypy ${PROJECT_MODULE}
+	@${PYTHON_ACTIVATE} && ${PYTHON} -m flake8
+	@${PYTHON_ACTIVATE} && ${PYTHON} -m mypy ${PROJECT_MODULE}
 
 test: install-requirements
 	@echo "Testing"
-	@${PYTHON_ACTIVATE} && python3 -m pytest -s \
+	@${PYTHON_ACTIVATE} && ${PYTHON} -m pytest -s \
 	--cov-branch \
 	--cov=. \
 	--cov-fail-under=70
 
 #DIRECTORIES
 ${VENV_DIR}:
-	@python3 -m venv venv
+	@${PYTHON} -m venv venv
 	@echo "Install requirements"
 	@${PYTHON_ACTIVATE} \
 	&& pip install -r requirements.txt

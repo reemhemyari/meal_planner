@@ -2,40 +2,49 @@
 VENV_DIR=venv
 PROJECT_MODULE=meal_planner
 
+ifdef OS
+	RMDIR = rmdir /s/q
+	PYTHON_ACTIVATE = ${VENV_DIR}\Scripts\activate
+	PYTHON = py
+else
+	RMDIR = rm -rf
+	PYTHON_ACTIVATE = . ./${VENV_DIR}/bin/activate
+	PYTHON = python3
+endif
 
 #TARGETS FOR HUMAN INTERACTION
 default: clean test
 
 clean:
 	@echo "Clean"
-	@rm -rf ${VENV_DIR}
-	@rm .coverage
-	@find . -type d -name ".pytest_cache" -exec rm -rf {} +
-	@find . -type d -name ".mypy_cache" -exec rm -rf {} +
+	@${RMDIR} ${VENV_DIR}
+	@${RMDIR} .coverage
+	@${RMDIR} ".pytest_cache"
+	@${RMDIR} ".mypy_cache"
 
 install-requirements: ${VENV_DIR}
 
 format: install-requirements
 	@echo "Formatting"
-	@. ./${VENV_DIR}/bin/activate && python3 -m black ${PROJECT_MODULE}
+	@${PYTHON_ACTIVATE} && ${PYTHON} -m black ${PROJECT_MODULE}
 
 lint: install-requirements
 	@echo "Linting"
-	@. ./${VENV_DIR}/bin/activate && python3 -m flake8
-	@. ./${VENV_DIR}/bin/activate && python3 -m mypy ${PROJECT_MODULE}
+	@${PYTHON_ACTIVATE} && ${PYTHON} -m flake8
+	@${PYTHON_ACTIVATE} && ${PYTHON} -m mypy ${PROJECT_MODULE}
 
 test: install-requirements
 	@echo "Testing"
-	@. ./${VENV_DIR}/bin/activate && python3 -m pytest -s \
+	@${PYTHON_ACTIVATE} && ${PYTHON} -m pytest -s \
 	--cov-branch \
 	--cov=. \
 	--cov-fail-under=70
 
 #DIRECTORIES
 ${VENV_DIR}:
-	@python3 -m venv venv
+	@${PYTHON} -m venv venv
 	@echo "Install requirements"
-	@. ./venv/bin/activate \
+	@${PYTHON_ACTIVATE} \
 	&& pip install -r requirements.txt
 
 #Makefile internals

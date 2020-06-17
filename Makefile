@@ -1,6 +1,6 @@
 #Internal vars
 VENV_DIR=venv
-PROJECT_MODULE=meal_planner
+PROJECT_MODULE=mealplanner
 
 ifdef OS
 	RMDIR = rmdir /s/q

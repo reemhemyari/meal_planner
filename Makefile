@@ -40,6 +40,11 @@ test: install-requirements
 	--cov=. \
 	--cov-fail-under=70
 
+run: PYTHONPATH=.
+run: install-requirements
+	@echo "Running"
+	@${PYTHON_ACTIVATE} && ${PYTHON} mealplanner/meal_planner.py
+
 #DIRECTORIES
 ${VENV_DIR}:
 	@${PYTHON} -m venv venv

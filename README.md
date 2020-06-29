@@ -11,7 +11,7 @@ A program that returns you a list of meals. It's supposed to help you decide wha
 
 ## Pre-run
 - Clone the repository
-- Open it on your IDE
+
 ---
 
 ## Running 
@@ -20,7 +20,7 @@ if you type:
 
 ---
 - `make clean` - clears everything
-- `make format` - checks the file's formatting
+- `make format` - formats the file
 - `make test` - checks that all the tests created for the code pass
 - `make lint` - checks for stylistic errors 
 
